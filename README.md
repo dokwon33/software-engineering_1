@@ -21,8 +21,18 @@
 ## Project Constraints
 
 ## High level Architecture 
-* 그림
-* 설명
+![FinalArchitecture](https://github.com/user-attachments/assets/6b7fa5f8-0e59-4262-adb5-d88a30605232)
+>이 아키텍처는 Layered 아키텍처와 마이크로서비스 아키텍처의 특징을 결합한 구조입니다.
+>Layered 아키텍처의 안정성과 마이크로서비스 아키텍처의 유연성을 모두 반영하고자 하였습니다.
+>
+>먼저, 전체 시스템은 Data Layer, Business Layer, Presentation Layer의 3계층으로 나뉘어 Layered 아키텍처의 분리된 책임 원칙을 따릅니다.
+>Data Layer는 Redis, MySQL DB, AWS S3 등의 저장소 내의 데이터를 관리하고,
+>Business Layer는 사용자 인증, 리뷰, 검색 등 비즈니스 로직을 처리하며,
+>Presentation Layer는 프론트엔드 화면과 사용자 경험을 제공합니다.
+>또한, 각 서비스는 최대한 독립적인 기능 단위로 설계하여 결합도를 낮추고 확장성과 유지보수성을 높이고자 하였습니다.
+>
+>*여기서 서비스(Service)는 Controller-Service-Repository 구조의 Service가 아니라, 더 추상회된 개념입니다.
+
 
 ## Technology stacks
 ### Tech Stack
