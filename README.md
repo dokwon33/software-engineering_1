@@ -66,7 +66,33 @@ APK파일과 함께 다운로드 방법
 ### \-테스트 케이스 및 결과
 
 ## Repository Structure
-각각의 디렉토리에 대한 설명
+### Front-End Repository
+### Back-End Repository
+ - UOSense-Backend: SpringBoot 프로젝트 파일   
+```
+/* UOSense-Backend 내 주요 디렉토리 설명 */
+src // 프로젝트 소스코드
+ ┣ main
+ ┃ ┣ java
+ ┃ ┃ ┗ UOSense
+ ┃ ┃ ┃ ┗ UOSense_Backend
+ ┃ ┃ ┃ ┃ ┣ common  // 유용성이 
+ ┃ ┃ ┃ ┃ ┃ ┣ converter  // 엔티티 속성과 DB 테이블 내 컬럼을 서로 변환해주는 컨버터 모음
+ ┃ ┃ ┃ ┃ ┃ ┣ enumClass // enum 클래스 모음
+ ┃ ┃ ┃ ┃ ┃ ┣ exception // 커스텀 예외 모음
+ ┃ ┃ ┃ ┃ ┃ ┣ handler // 권한 인증 처리 핸들러 모음
+ ┃ ┃ ┃ ┃ ┃ ┣ securityFilter // 보안 관련 필터 모음
+ ┃ ┃ ┃ ┃ ┃ ┗ Utils  // 유틸리티 클래스 모음
+ ┃ ┃ ┃ ┃ ┣ config  // 설정 파일 모음
+ ┃ ┃ ┃ ┃ ┣ controller  // 컨트롤러 모음
+ ┃ ┃ ┃ ┃ ┣ dto  // 데이터 전송 객체 모음
+ ┃ ┃ ┃ ┃ ┣ entity  // 엔티티 모음
+ ┃ ┃ ┃ ┃ ┣ repository // 리파지토리 모음
+ ┃ ┃ ┃ ┃ ┣ service // 서비스 모음
+ ┃ ┃ ┃ ┃ ┗ UoSenseBackendApplication.java // 어플리케이션
+ ┃ ┗ resources  // 
+ ┃ ┃ ┗ application.properties // 환경변수
+```
 
 ## Project Team Members
 * 이도권: 조장, Front-End, 개발담당(FE)
