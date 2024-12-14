@@ -119,22 +119,18 @@
 - **Code Simplification:** Lombok
 
 ## Installation guideline
-<details>
-    <summary> 설치 가이드 </summary>
-    
-    0. Android 스마트폰 기준 <br>
-    1. /artifacts/UOSense.apk 다운로드 <br>
-    2. 출처를 알 수 없는 앱 설치를 위해 "설정" 버튼 클릭 <br>
-    ![KakaoTalk_Photo_2024-12-14-18-48-56 001](https://github.com/user-attachments/assets/b8e81956-0490-49ad-8ba5-35aba41745ca) <br>
-    3. 출처를 알 수 없는 앱 설치 -> 권한 허용 <br>
-    ![KakaoTalk_Photo_2024-12-14-18-48-57 002](https://github.com/user-attachments/assets/fe31e95b-3d9f-4acd-974b-6b9d528a792f) <br>
-    5. 출처를 알 수 없는 앱 설치 -> "무시하고 설치" 버튼 클릭 <br>
-    ![KakaoTalk_Photo_2024-12-14-18-48-57 003](https://github.com/user-attachments/assets/63c4a1e0-f5c0-4901-bed4-b8cee8e3a7f4) <br>
-    6. 설치 중... <br>
-    ![KakaoTalk_Photo_2024-12-14-18-48-57 004](https://github.com/user-attachments/assets/b049907a-e4eb-49e5-ad36-cc5fbca43614) <br>
-    7. 설치 완료 -> 앱 아이콘 클릭 해 앱 실행!! <br>
-    ![KakaoTalk_Photo_2024-12-14-18-54-54](https://github.com/user-attachments/assets/502dc97a-19d9-4e8d-b04a-da5935cca970) <br>
-</details>
+0. Android 스마트폰 기준 <br>
+1. /artifacts/UOSense.apk 다운로드 <br>
+2. 출처를 알 수 없는 앱 설치를 위해 "설정" 버튼 클릭 <br>
+![KakaoTalk_Photo_2024-12-14-18-48-56 001](https://github.com/user-attachments/assets/b8e81956-0490-49ad-8ba5-35aba41745ca) <br>
+3. 출처를 알 수 없는 앱 설치 -> 권한 허용 <br>
+![KakaoTalk_Photo_2024-12-14-18-48-57 002](https://github.com/user-attachments/assets/fe31e95b-3d9f-4acd-974b-6b9d528a792f) <br>
+5. 출처를 알 수 없는 앱 설치 -> "무시하고 설치" 버튼 클릭 <br>
+![KakaoTalk_Photo_2024-12-14-18-48-57 003](https://github.com/user-attachments/assets/63c4a1e0-f5c0-4901-bed4-b8cee8e3a7f4) <br>
+6. 설치 중... <br>
+![KakaoTalk_Photo_2024-12-14-18-48-57 004](https://github.com/user-attachments/assets/b049907a-e4eb-49e5-ad36-cc5fbca43614) <br>
+7. 설치 완료 -> 앱 아이콘 클릭 해 앱 실행!! <br>
+![KakaoTalk_Photo_2024-12-14-18-54-54](https://github.com/user-attachments/assets/502dc97a-19d9-4e8d-b04a-da5935cca970) <br>
 
 
 ## Project Deliverables
