@@ -42,7 +42,7 @@
 <br>
 
 
-#### DEMO VIDEO
+#### DEMO VIDEO: <<관련 문서 링크>>
 
 ## Project Constraints
 
