@@ -54,14 +54,14 @@
 
 
 ## Expected Deliverables
-\-요구사항 분석 명세서
-\-아키텍쳐 및 설계 (UML, UI Desig)
-\-Coding standard
-\-Source code
-\-테스트 케이스 및 결과
-\-Scrum 회의록
-\-Sprint 일정표
-\-Product Backlog
+####요구사항 분석 명세서
+####아키텍쳐 및 설계 (UML, UI Desig)
+####Coding standard
+####Source code
+####테스트 케이스 및 결과
+####Scrum 회의록
+####Sprint 일정표
+####Product Backlog
 <br>
 
 ## Project Constraints
