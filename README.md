@@ -129,6 +129,57 @@ APK파일과 함께 다운로드 방법
 
 ## Repository Structure
 ### Front-End Repository
+ - UOSense-Frontend: 프로젝트 파일
+```
+/* UOSense-Frontend 내 주요 디렉토리 설명 */
+src
+ ┣ androidTest
+ ┃ ┗ java
+ ┃ ┃ ┗ com
+ ┃ ┃ ┃ ┗ example
+ ┃ ┃ ┃ ┃ ┗ uosense
+ ┃ ┃ ┃ ┃ ┃ ┗ ExampleInstrumentedTest.kt
+ ┣ main
+ ┃ ┣ java
+ ┃ ┃ ┗ com
+ ┃ ┃ ┃ ┗ example
+ ┃ ┃ ┃ ┃ ┗ uosense
+ ┃ ┃ ┃ ┃ ┃ ┣ adapters // RecyclerView 및 ListView와 같은 UI 구성 요소에 데이터 바인딩을 위한 어댑터 클래스 모음
+ ┃ ┃ ┃ ┃ ┃ ┣ data // 데이터 모델 및 저장소 관련 클래스 모음
+ ┃ ┃ ┃ ┃ ┃ ┣ fragments // 화면 단위 UI 조각 관리 클래스 모음
+ ┃ ┃ ┃ ┃ ┃ ┣ models // API 요청 및 응답을 위한 데이터 모델 클래스 모음
+ ┃ ┃ ┃ ┃ ┃ ┣ network // Retrofit API 서비스 인터페이스 및 네트워크 관리 클래스
+ ┃ ┃ ┃ ┃ ┃ ┣ ui // UI 관리 및 화면 관련 클래스
+ ┃ ┃ ┃ ┃ ┃ ┣ AppUtils.kt // 공통적으로 사용하는 앱 유틸리티 함수 모음
+ ┃ ┃ ┃ ┃ ┃ ┣ ControlCreateActivity.kt // 관리자 식당 생성 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ ControlMainActivity.kt // 관리자 메인 화면 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ ControlRestaurantDetail.kt // 관리자 식당 상세 정보(수정) 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ ControlRestaurantListActivity.kt // 관리자 식당 목록 확인 및 관리 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ MainActivity.kt // 사용자 메인 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ MyPageActivity.kt // 마이페이지 (자신의 프로필 정보 확인 및 설정) 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ ReportActivity.kt // 리뷰 신고 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ RestaurantDetailActivity.kt // 사용자 식당 상세 정보 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ RestaurantInfoSuggestionActivity.kt // 정보 제안 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ RestaurantListActivity.kt // 사용자 식당 목록 확인 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ ReviewListActivity.kt // 리뷰 전체 목록 확인 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ ReviewWriteActivity.kt // 리뷰 작성 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ SelectedDoorActivity.kt // 필터(정문, 쪽문, 남문, 후문)에 따라 식당 목록 확인 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ SignupActivity.kt // 회원가입 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ SignupCompleteActivity.kt // 회원가입 완료 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┗ StartActivity.kt // 앱 시작 시 첫 화면 액티비티
+ ┃ ┣ res
+ ┃ ┃ ┣ drawable // 이미지 리소스 등 그래픽 요소 포함 디렉토리
+ ┃ ┃ ┣ layout // UI 레이아웃 XML 파일 포함 디렉토리
+ ┃ ┃ ┣ mipmap-anydpi-v26 // 화면 해상도에 맞는 앱 아이콘 리소스 디렉토리
+ ┃ ┃ ┣ mipmap-hdpi // 화면 해상도에 맞는 앱 아이콘 리소스 디렉토리
+ ┃ ┃ ┣ mipmap-mdpi // 화면 해상도에 맞는 앱 아이콘 리소스 디렉토리
+ ┃ ┃ ┣ mipmap-xhdpi // 화면 해상도에 맞는 앱 아이콘 리소스 디렉토리
+ ┃ ┃ ┣ mipmap-xxhdpi // 화면 해상도에 맞는 앱 아이콘 리소스 디렉토리
+ ┃ ┃ ┣ mipmap-xxxhdpi // 화면 해상도에 맞는 앱 아이콘 리소스 디렉토리
+ ┃ ┃ ┣ values // 문자열 리소스, 색상, 스타일 등을 정의하는 XML 파일이 포함된 디렉토리
+ ┃ ┃ ┗ xml // 앱 설정 파일이나 XML 형식의 사용자 정의 리소스가 포함된 디렉토리
+ ┃ ┣ AndroidManifest.xml // 액티비티, 서비스, 권한 등 주요 애플리케이션 속성을 정의
+```
 ### Back-End Repository
  - UOSense-Backend: SpringBoot 프로젝트 파일   
 ```
