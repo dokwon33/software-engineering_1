@@ -54,7 +54,7 @@ APK파일과 함께 다운로드 방법
 ## Project Deliverables
 ### \-요구사항 분석 명세서 final version: <<링크>>
 ### \-Architecture 및 Design Documents
-* Software architecture: <<관련 문서 링크>>
+* Software architecture: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/High-level%20Architecture%20UML%20Diagrams%20Document_Final.docx.pdf)>>
 * Software Design: <<관련 문서 링크>>
 * UI Design: <<관련 문서 링크>>
 
