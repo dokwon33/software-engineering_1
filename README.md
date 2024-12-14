@@ -58,10 +58,6 @@
 - **API Document:** Springdoc OpenAPI
 - **Code Simplification:** Lombok
 
-### 라이브러리(의존성)
-* Front-End
-* Back-End
-
 ## Installation guideline
 APK파일과 함께 다운로드 방법
 
