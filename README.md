@@ -194,11 +194,10 @@
     7. 리뷰 과정을 거친 후 작업 브랜치를 base 브랜치에 merge
     8. PR을 닫고 작업 브랜치 삭제
 #### 코드에 관한 documentation
-- API 명세서: https://eggplant-taurus-0ef.notion.site/API-159a62ef7a25801db690edd5a137df09?pvs=4)
+- API 명세서: https://eggplant-taurus-0ef.notion.site/API-159a62ef7a25801db690edd5a137df09?pvs=4
 - Swagger UI: http://3.36.51.32:8080/swagger-ui/index.html#
 
-### - 테스트 케이스 및 결과
-
+### - 테스트 케이스 및 결과 final version: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/test_case_template.ver%203.0.xlsx)>>
 ### - Scrum 관련 자료 <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/Scrum%20%EA%B4%80%EB%A0%A8%20%EB%AC%B8%EC%84%9C.docx)>>
 - 회의록
 - Sprint 일정표
