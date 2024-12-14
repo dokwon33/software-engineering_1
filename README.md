@@ -43,7 +43,6 @@
 - **UI:** Jetpack Compose, Glide, Google Material Design, XML Layout
 - **API & NETWORKING:** Retrofit 2, Gson Converter, OkHttp
 - **MAP & LOCATION:** Google Play Services Location, Naver Map SDK
-- **Storage:** AWS S3
 - **Test & Debuging:** JUnit 4, Android Test Manifest
 ### Back-End
 - **Language:** Java
@@ -62,9 +61,9 @@
 APK파일과 함께 다운로드 방법
 
 ## Project Deliverables
-### \-요구사항 분석 명세서 final version: <<링크>>
+### \-요구사항 분석 명세서 final version: <<[링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/srs-template-v04.doc)>>
 ### \-Architecture 및 Design Documents
-* Software architecture & Design: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/High-level%20Architecture%20UML%20Diagrams%20Document_Final.docx.pdf)>>
+* Software architecture & Design final version: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/High-level%20Architecture%20UML%20Diagrams%20Document_Final.docx.pdf)>>
 * UI Design: <<관련 문서 링크>>
 
 ### Coding Standard: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/Coding_Standard_Final.docx.pdf)>>
