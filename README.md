@@ -205,7 +205,7 @@
 
 
 ## Repository Structure
-### Front-End Repository
+### Front-End Repository ([링크](https://github.com/UOSense/Front-End))
  - UOSense-Frontend: 프로젝트 파일
 ```
 /* UOSense-Frontend 내 주요 디렉토리 설명 */
@@ -251,7 +251,7 @@ src
  ┃ ┃ ┗ xml // 앱 설정 파일이나 XML 형식의 사용자 정의 리소스가 포함된 디렉토리
  ┃ ┣ AndroidManifest.xml // 액티비티, 서비스, 권한 등 주요 애플리케이션 속성을 정의
 ```
-### Back-End Repository
+### Back-End Repository ([링크](https://github.com/UOSense/Back-End))
  - UOSense-Backend: SpringBoot 프로젝트 파일   
 ```
 /* UOSense-Backend 내 주요 디렉토리 설명 */
