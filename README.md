@@ -157,7 +157,7 @@
     6. 배포는 각각의 repository를 clone해서 한다.
     7. 최종 완성본 코드는 교수님 계신  software-engineering_1 repository에 올린다.
 
-  #### PR 과정
+  #### PR Strategy
    
     1. PR 제목 양식
         - [type] subject
