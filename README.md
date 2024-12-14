@@ -60,8 +60,61 @@ APK파일과 함께 다운로드 방법
 
 ### Coding Standard: <<관련 문서 링크>>
 
-### \-Code: branch description 과 코드에 관한 documentation 설명
+### Code: branch description
+    1. Github에서 organization을 새로 판다
+    2. repository를 프론트엔드는 Front-End, 백엔드는 Back-End로 각각 명명한다.
+    3. 해당 repository에서 배포용 브랜치 이름은 main, 작업 내용을 병합할 개발용 브랜치는 dev로 명명한다.
+    4. `Github`에서 이슈 생성, 번호 확인하고 `issue/#이슈번호`로 작업 브랜치를 생성한다.
+        1. 이슈에 적은 목표를 달성한다.
+        2. 로컬에서 테스트한다.
+        3. 수정 사항을 commit하고 원격 저장소로 push한다.
+        4. PR 날리고 Reviewer로 상대방 지정한다.
+        5. 지정된 Reviewer는 코드를 보고 코멘트를 남긴다.
+        6. 리뷰 과정을 거친 후 작업 브랜치를 dev 브랜치에 merge한다.
+        7. issue를 닫고 작업 브랜치를 삭제한다.
+    5. 4번을 반복해 수행한다. - 기능 구현 완료 시까지
+    6. 배포는 각각의 repository를 clone해서 한다.
+    7. 최종 완성본 코드는 교수님 계신  software-engineering_1 repository에 올린다.
 
+  ### PR 과정
+   
+    1. PR 제목 양식
+        - [type] subject
+            - 일반 커밋 제목은 type: subject하고 PR 제목은 [type] subject 이런 식으로 구분
+        - 타입 종류
+            - `feat` : 새로운 기능 추가
+            - `fix` : 버그 수정
+            - `docs` : 문서 수정
+            - `style` : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+            - `refactor` : 코드 리펙토링
+            - `test` : 테스트 코드, 리펙토링 테스트 코드 추가
+            - `chore` : 빌드 업무 수정, 패키지 매니저 수정
+        - e.g. feat: 관리자 페이지 기능 추가 **← 소문자로 시작**
+    2.  PR 내용 양식
+        
+        ```jsx
+        body // 한 일 요약, 왜 이렇게 했는지, 팀원에게 공유 필요한 정보 등등
+        
+        footer // 꼬리말 e.g. resolves, fixes
+        ```
+        
+        - footer  `resolves: #이슈번호` (이슈 해결 했을 경우)
+    3. Reviewer로 상대방 지정
+    4. 지정된 Reviewer는 코드 확인
+        - 기능 확인: 요구 사항 충족하는지
+        - 코드 품질: 코드가 읽기 쉽고, 유지보수 가능한지
+        - 버그 검출: 잠재적인 버그, 논리적 오류, 예외 처리 누락 여부
+        - 스타일 준수: **Coding Standard**를 잘 준수했는지
+        - 성능: 비효율적인 코드가 있는지
+    5. 코멘트 작성
+        - 특정 코드에 대한 코멘트를 원할 경우 + 클릭
+    6. 수정 및 재검토
+        - 리뷰어의 피드백에 따라 코드를 수정한 뒤, 다시 제출 → 4번(반복)
+    7. 리뷰 과정을 거친 후 작업 브랜치를 base 브랜치에 merge
+    8. PR을 닫고 작업 브랜치 삭제
+### 코드에 관한 documentation
+- API 명세서: https://eggplant-taurus-0ef.notion.site/API-159a62ef7a25801db690edd5a137df09?pvs=4)
+- Swagger UI: http://3.36.51.32:8080/swagger-ui/index.html#
 
 ### \-테스트 케이스 및 결과
 
