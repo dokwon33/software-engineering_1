@@ -133,12 +133,6 @@ APK파일과 함께 다운로드 방법
 ```
 /* UOSense-Frontend 내 주요 디렉토리 설명 */
 src
- ┣ androidTest
- ┃ ┗ java
- ┃ ┃ ┗ com
- ┃ ┃ ┃ ┗ example
- ┃ ┃ ┃ ┃ ┗ uosense
- ┃ ┃ ┃ ┃ ┃ ┗ ExampleInstrumentedTest.kt
  ┣ main
  ┃ ┣ java
  ┃ ┃ ┗ com
