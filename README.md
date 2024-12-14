@@ -35,14 +35,28 @@
 
 
 ## Technology stacks
-### Tech Stack
-\-Language: Kotlin, Java <br>
-\-Framework: Spring boot <br>
-\-Development Tool: Android Studio, IntelliJ, Git <br>
-\-Collaboration Tool: Notion, GitHub <br>
-\-Database: MySQL, Redis <br>
-\-Storage: AWS S3 <br>
-\-Deploy: AWS EC2 <br>
+### Front-End
+\- **Language**: Kotlin, XML(UI)
+\- **Framework**: Android SDK 35 (Compile & Target SDK)
+\- **Development Tool**: Android Studio, Git
+\- **Colloboration Tool**: Notion, GitHub
+\- **UI:** Jetpack Compose, Glide, Google Material Design, XML Layout
+\- **API & NETWORKING:** Retrofit 2, Gson Converter, OkHttp
+\- **MAP & LOCATION:** Google Play Services Location, Naver Map SDK
+\- **Storage:** AWS S3
+\- **Test & Debuging:** JUnit 4, Android Test Manifest
+### Back-End
+\- **Language:** Java
+\- **Framework:** Spring boot(Spring Boot Starter Data JPA, Web, Mail, Cache)
+\- **Development Tool:** Intellij IDEA, Git
+\- **Collaboration Tool:** Notion, GitHub
+\- **Database:** MySQL
+\- **Cache:** Caffeine, Redis
+\- **Storage:** AWS S3
+\- **Deploy:** AWS EC2
+\- **Security:** Spring Security, JWT
+\- **API Document:** Springdoc OpenAPI
+\- **Code Simplification:** Lombok
 
 ### 라이브러리(의존성)
 * Front-End
