@@ -61,14 +61,14 @@
 APK파일과 함께 다운로드 방법
 
 ## Project Deliverables
-### \-요구사항 분석 명세서 final version: <<[링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/srs-template-v04.doc)>>
-### \-Architecture 및 Design Documents
-* Software architecture & Design final version: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/High-level%20Architecture%20UML%20Diagrams%20Document_Final.docx.pdf)>>
+### - 요구사항 분석 명세서 final version: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/srs-template-v04.doc)>>
+### - Architecture 및 Design Documents
+* Software architecture & Design: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/High-level%20Architecture%20UML%20Diagrams%20Document_Final.docx.pdf)>>
 * UI Design: <<관련 문서 링크>>
 
-### Coding Standard: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/Coding_Standard_Final.docx.pdf)>>
+### - Coding Standard: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/Coding_Standard_Final.docx.pdf)>>
 
-### Code: branch description
+#### Code: branch description
     1. Github에서 organization을 새로 판다
     2. repository를 프론트엔드는 Front-End, 백엔드는 Back-End로 각각 명명한다.
     3. 해당 repository에서 배포용 브랜치 이름은 main, 작업 내용을 병합할 개발용 브랜치는 dev로 명명한다.
@@ -84,7 +84,7 @@ APK파일과 함께 다운로드 방법
     6. 배포는 각각의 repository를 clone해서 한다.
     7. 최종 완성본 코드는 교수님 계신  software-engineering_1 repository에 올린다.
 
-  ### PR 과정
+  #### PR 과정
    
     1. PR 제목 양식
         - [type] subject
@@ -120,11 +120,17 @@ APK파일과 함께 다운로드 방법
         - 리뷰어의 피드백에 따라 코드를 수정한 뒤, 다시 제출 → 4번(반복)
     7. 리뷰 과정을 거친 후 작업 브랜치를 base 브랜치에 merge
     8. PR을 닫고 작업 브랜치 삭제
-### 코드에 관한 documentation
+#### 코드에 관한 documentation
 - API 명세서: https://eggplant-taurus-0ef.notion.site/API-159a62ef7a25801db690edd5a137df09?pvs=4)
 - Swagger UI: http://3.36.51.32:8080/swagger-ui/index.html#
 
-### \-테스트 케이스 및 결과
+### - 테스트 케이스 및 결과
+
+### - Scrum 관련 자료 <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/Scrum%20%EA%B4%80%EB%A0%A8%20%EB%AC%B8%EC%84%9C.docx)>>
+- 회의록
+- Sprint 일정표
+- Product Backlog
+
 
 ## Repository Structure
 ### Front-End Repository
