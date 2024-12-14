@@ -57,7 +57,7 @@ APK파일과 함께 다운로드 방법
 * Software architecture & Design: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/High-level%20Architecture%20UML%20Diagrams%20Document_Final.docx.pdf)>>
 * UI Design: <<관련 문서 링크>>
 
-### Coding Standard: <<관련 문서 링크>>
+### Coding Standard: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/Coding_Standard_Final.docx.pdf)>>
 
 ### Code: branch description
     1. Github에서 organization을 새로 판다
