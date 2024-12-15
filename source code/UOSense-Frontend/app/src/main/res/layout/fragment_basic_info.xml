@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+
+
+
+    <!-- 입력 필드 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="장소명"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextRestaurantName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="장소명 입력"
+        android:background="@drawable/rounded_input_background"
+        android:padding="8dp"
+        android:inputType="text"
+        android:layout_marginBottom="8dp"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="업종"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CAFE, BAR, RESTAURANT 중 하나를 적어주세요."
+        android:background="@drawable/rounded_input_background"
+        android:padding="8dp"
+        android:inputType="text"
+        android:layout_marginBottom="8dp"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black" />
+
+    <!-- 입력 필드 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="위치"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextRestaurantAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="상세 위치 입력 (예 : 동, 층, 호)"
+        android:background="@drawable/rounded_input_background"
+        android:padding="8dp"
+        android:inputType="text"
+        android:layout_marginBottom="8dp"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black" />
+
+    <!-- 입력 필드 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화번호"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="전화번호 입력"
+        android:background="@drawable/rounded_input_background"
+        android:padding="8dp"
+        android:inputType="text"
+        android:layout_marginBottom="8dp"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black" />
+
+</LinearLayout>

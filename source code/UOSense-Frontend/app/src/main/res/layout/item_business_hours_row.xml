@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="8dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/dayTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:gravity="center"
+        android:text="월요일"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/openingTimeInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="시작 시간 (HH:mm:ss)"
+        android:inputType="time"
+        android:maxLength="8"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_input_background"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/closingTimeInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="마감 시간 (HH:mm:ss)"
+        android:inputType="time"
+        android:maxLength="8"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_input_background"
+        android:padding="8dp" />
+
+    <CheckBox
+        android:id="@+id/holidayCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/rounded_border_black" />
+
+</LinearLayout>

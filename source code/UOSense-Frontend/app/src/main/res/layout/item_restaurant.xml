@@ -1,0 +1,74 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background_item"
+    android:layout_margin="8dp">
+
+    <!-- 식당 이름 -->
+    <TextView
+        android:id="@+id/restaurantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restaurant Name"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 출입구 유형 -->
+    <TextView
+        android:id="@+id/restaurantDoorType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Door Type"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- 카테고리 및 부가 설명 -->
+    <TextView
+        android:id="@+id/restaurantCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category - Sub-description"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- 주소 -->
+    <TextView
+        android:id="@+id/restaurantAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- 전화번호 -->
+    <TextView
+        android:id="@+id/restaurantPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- 평점 -->
+    <TextView
+        android:id="@+id/restaurantRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- 영업일 리스트 -->
+    <LinearLayout
+        android:id="@+id/businessDaysContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp">
+        <!-- BusinessDay 정보가 동적으로 추가될 예정 -->
+    </LinearLayout>
+</LinearLayout>

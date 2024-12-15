@@ -1,0 +1,11 @@
+<resources>
+    <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:padding">12dp</item>
+    </style>
+    <style name="Widget.AppCompat.SearchView" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="queryBackground">@color/white</item>
+        <item name="iconifiedByDefault">false</item>
+    </style>
+</resources>

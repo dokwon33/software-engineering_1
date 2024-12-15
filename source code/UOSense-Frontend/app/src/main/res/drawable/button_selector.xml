@@ -1,0 +1,20 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 선택된 상태 - 주황색 배경, 둥근 모서리 -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="12dp" />
+            <solid android:color="@android:color/holo_orange_light" />
+        </shape>
+    </item>
+
+    <!-- 기본 상태 - 흰색 배경, 둥근 모서리 -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="12dp" />
+            <solid android:color="@android:color/white" />
+            <stroke android:width="1dp" android:color="#BDBDBD" />
+        </shape>
+    </item>
+
+</selector>

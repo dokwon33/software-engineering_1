@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- 메뉴 이미지 수정 -->
+    <ImageView
+        android:id="@+id/menuImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/btnEditMenuImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이미지 추가"
+        android:textColor="@color/black"/>
+
+    <!-- 메뉴 이름 수정 -->
+    <EditText
+        android:id="@+id/editMenuName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="메뉴 이름"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"/>
+
+    <!-- 메뉴 가격 수정 -->
+    <EditText
+        android:id="@+id/editMenuPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="₩ 가격"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"/>
+
+    <!-- 메뉴 설명 수정 -->
+    <EditText
+        android:id="@+id/editMenuDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="메뉴 설명"
+        android:inputType="textMultiLine"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:lines="3" />
+</LinearLayout>

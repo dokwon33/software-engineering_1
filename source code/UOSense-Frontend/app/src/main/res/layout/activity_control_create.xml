@@ -1,0 +1,257 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/rounded_border_green">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginVertical="8dp">
+
+        <!-- 뒤로 가기 버튼 -->
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_back"
+            android:contentDescription="뒤로 가기" />
+
+        <!-- 식당 이미지 수정 가능 -->
+        <ImageView
+            android:id="@+id/restaurantImage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="식당 이미지"
+            android:src="@drawable/ic_uos" />
+        <!-- 구분선 -->
+
+
+        <!-- 사진 첨부 -->
+        <TextView
+            android:id="@+id/photoAttachmentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="식당 사진"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+
+        <LinearLayout
+            android:id="@+id/photoAttachmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/photoPlusBtn"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/ic_add"
+                android:contentDescription="사진 추가"
+                android:textColor="#000000"/>
+        </LinearLayout>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+        <!-- 식당 이름 -->
+        <EditText
+            android:id="@+id/editRestaurantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="식당 이름"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+
+        <!-- 도어 타입 -->
+        <Spinner
+            android:id="@+id/editDoorType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/restaurant_door_types"
+            android:backgroundTint="@color/black"
+            android:spinnerMode="dropdown"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+        <!-- 카테고리 -->
+        <Spinner
+            android:id="@+id/editRestaurantCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/restaurant_categories"
+            android:backgroundTint="@color/black"
+            android:spinnerMode="dropdown"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+        <!-- 부가 설명 -->
+        <Spinner
+            android:id="@+id/editSubDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/restaurant_sub_descriptions"
+            android:backgroundTint="@color/black"
+            android:spinnerMode="dropdown"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+
+        <!-- 설명 -->
+        <EditText
+            android:id="@+id/editRestaurantDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="설명 (간단한 식당 설명)"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:gravity="top"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+        <!-- 평점과 리뷰 개수 -->
+        <TextView
+            android:id="@+id/restaurantRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="평점: 0 (default)"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/restaurantReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리뷰: 0 (default)"
+            android:textColor="@color/black"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+        <!-- 영업 시간 -->
+        <EditText
+            android:id="@+id/editRestaurantOpeningTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="오픈 시간 (HH:MM)"
+            android:textColorHint="@color/black"
+            android:textColor="#000000"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+        <EditText
+            android:id="@+id/editRestaurantClosingTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="마감 시간 (HH:MM)"
+            android:textColorHint="@color/black"
+            android:textColor="#000000"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+        <!-- 주소와 전화번호 -->
+        <EditText
+            android:id="@+id/editRestaurantAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="주소(도로명 주소)"
+            android:textColorHint="@color/black"
+            android:textColor="#000000"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+        <EditText
+            android:id="@+id/editRestaurantPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="전화번호"
+            android:textColorHint="@color/black"
+            android:textColor="#000000"/>
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+        <!-- 영업일 및 메뉴 관리 -->
+        <Button
+            android:id="@+id/btnEditBusinessDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="영업일 추가" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/businessDaysRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnEditMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="메뉴 추가" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/menuRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- 저장 버튼 -->
+        <Button
+            android:id="@+id/btnSaveRestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="저장"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</ScrollView>

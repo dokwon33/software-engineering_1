@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- 배경 색상 -->
+    <corners android:radius="8dp"/> <!-- 모서리 둥글게 -->
+    <shadow android:color="#55000000" android:radius="4dp"/> <!-- 그림자 -->
+    <padding android:top="8dp" android:bottom="8dp"/>
+</shape>

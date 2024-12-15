@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">UOSense</string>
+    <string name="favorite_button_desc">즐겨찾기 버튼</string>
+    <string name="restaurant_image">Restaurant Image</string>
+    <string-array name="restaurant_categories">
+        <item>한식</item>
+        <item>중식</item>
+        <item>일식</item>
+        <item>양식</item>
+        <item>기타</item>
+    </string-array>
+    <string-array name="restaurant_sub_descriptions">
+        <item>음식점</item>
+        <item>카페</item>
+        <item>술집</item>
+    </string-array>
+    <string-array name="restaurant_door_types">
+        <item>정문</item>
+        <item>쪽문</item>
+        <item>남문</item>
+        <item>후문</item>
+    </string-array>
+    <string-array name="days_of_week">
+        <item>월요일</item>
+        <item>화요일</item>
+        <item>수요일</item>
+        <item>목요일</item>
+        <item>금요일</item>
+        <item>토요일</item>
+        <item>일요일</item>
+    </string-array>
+
+</resources>

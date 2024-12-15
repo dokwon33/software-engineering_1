@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginVertical="5dp">
+
+        <!-- 헤더 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_back"
+                android:contentDescription="뒤로가기" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="리뷰 쓰기"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginEnd="30dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line_1" />
+
+        <!-- 제목 -->
+        <TextView
+            android:id="@+id/restaurantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="실크로드"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/green" />
+
+        <!-- 별점 -->
+        <RatingBar
+            android:id="@+id/myRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="5"
+            android:isIndicator="true"
+            android:stepSize="0.5" />
+
+
+        <!-- 리뷰 입력 -->
+        <EditText
+            android:id="@+id/reviewInput"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/rounded_input_background"
+            android:hint="후기를 입력하세요"
+            android:gravity="top"
+            android:padding="8dp"
+            android:maxLength="200"
+            android:textColor="#000000"
+            android:textColorHint="#999999"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/reviewCharacterCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="0/200"
+            android:textColor="#999999"
+            android:layout_marginTop="4dp" />
+
+        <!-- 리뷰 이벤트 체크 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/eventCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="리뷰 이벤트 참여 여부"
+                android:textColor="#000000"
+                android:layout_marginStart="8dp" />
+
+
+
+
+
+        </LinearLayout>
+
+        <!-- 사진 첨부 -->
+        <TextView
+            android:id="@+id/photoAttachmentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="사진 첨부"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <LinearLayout
+            android:id="@+id/photoAttachmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/photoPlusBtn"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/ic_add"
+                android:contentDescription="사진 추가" />
+        </LinearLayout>
+
+        <!-- 특징 버튼 -->
+        <TextView
+            android:id="@+id/featuresTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="이 곳의 특징은요"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/serviceBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="서비스가 좋아요"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_border_green"
+                android:textColor="@color/green" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/dateRecommendBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="데이트를 추천해요"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_border_pink"
+                android:textColor="@color/pink" />
+
+            <Button
+                android:id="@+id/soloEatBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="혼밥 가능해요"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_border_tealed_700"
+                android:textColor="@color/teal_700" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/kindOwnerBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="사장님이 친절해요"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_border_purple_200"
+                android:textColor="@color/purple_200" />
+
+            <Button
+                android:id="@+id/interiorBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="인테리어가 멋져요"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_border_orange"
+                android:textColor="@color/orange" />
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/registerReviewBtn"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_border_green"
+            android:layout_gravity="right"
+            android:layout_marginTop="12dp"
+            android:text="등록"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+
+
+</ScrollView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="map_fragment" type="id" />
+    <item name="searchButton" type="id" />
+    <item name="searchField" type="id" />
+    <item name="searchResults" type="id" />
+</resources>

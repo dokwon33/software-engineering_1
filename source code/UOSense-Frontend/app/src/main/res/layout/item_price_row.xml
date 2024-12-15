@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- 상품명 입력 필드 -->
+    <EditText
+        android:id="@+id/menuName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:hint="상품명 입력"
+        android:textColor="#000000"
+        android:textColorHint="#999999"
+        android:padding="8dp"
+        android:background="@drawable/rounded_input_background"
+        android:inputType="text" />
+
+    <!-- 금액 입력 필드 -->
+    <EditText
+        android:id="@+id/menuPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="금액 입력"
+        android:textColor="#000000"
+        android:textColorHint="#999999"
+        android:padding="8dp"
+        android:background="@drawable/rounded_input_background"
+        android:inputType="number" />
+
+    <!-- 삭제 버튼 -->
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_delete"
+        android:contentDescription="삭제 버튼" />
+</LinearLayout>

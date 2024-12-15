@@ -1,0 +1,314 @@
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+    android:background="@drawable/rounded_border_black"
+android:padding="16dp">
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginStart="0dp">
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_back"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</LinearLayout>
+
+<ImageView
+    android:id="@+id/restaurantImage"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:src="@drawable/ic_uos"
+    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:layout_marginTop="8dp">
+
+        <!-- 식당 정보 레이아웃 -->
+        <LinearLayout
+            android:id="@+id/nameCategoryLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp">
+
+            <!-- 식당 이름 -->
+            <TextView
+                android:id="@+id/restaurantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이름"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:ellipsize="end"
+                android:maxLines="1" />
+
+            <!-- 카테고리 -->
+            <TextView
+                android:id="@+id/restaurantCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카테고리"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- 버튼 레이아웃 -->
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- 즐겨찾기 버튼 -->
+            <ImageButton
+                android:id="@+id/favoriteButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:contentDescription="즐겨찾기" />
+
+            <!-- 공유 버튼 -->
+            <ImageButton
+                android:id="@+id/linkShareButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/ic_share"
+                android:contentDescription="공유" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <!-- 상세 설명 -->
+<TextView
+    android:id="@+id/restaurantDescription"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="설명"
+    android:textSize="14sp"
+    android:textColor="@color/black"
+    android:layout_marginBottom="5dp"/>
+
+<!-- 평점 -->
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="5dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="★"
+        android:textColor="#FF0000"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/restaurantRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.65"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="5dp"
+        />
+
+    <!--    리뷰 출력   -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="리뷰"
+        android:textColor="@color/gray"
+        android:layout_marginStart="25dp"/>
+    <!--    리뷰 수    -->
+    <TextView
+        android:id="@+id/restaurantReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35"
+        android:textColor="@color/gray"
+        android:layout_marginStart="5dp"/>
+</LinearLayout>
+
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:src="@drawable/line_1" />
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <!--영업 여부-->
+        <TextView
+            android:id="@+id/restaurantIsOpened"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="영업 중"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/restaurantTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:layout_marginStart="10dp"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/restaurantUpdateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수정 제안"
+            android:layout_marginStart="130dp"
+            android:clickable="true"
+            android:textColor="@color/black"
+            android:background="@drawable/rounded_border_tealed_700"
+            />
+
+    </LinearLayout>
+    <!-- 주소 -->
+    <TextView
+        android:id="@+id/restaurantAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주소"
+        android:textSize="14dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 전화번호 -->
+    <TextView
+        android:id="@+id/restaurantPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:layout_marginBottom="8dp"/>
+
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <Button
+        android:id="@+id/businessDaysBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="영업일"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_border_blue"
+        />
+
+    <Button
+        android:id="@+id/menuBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="메뉴"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_border_blue"
+        />
+
+    <Button
+        android:id="@+id/reviewBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="리뷰"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_border_blue"
+        />
+
+
+</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+         />
+
+<LinearLayout
+    android:id="@+id/reviewOptionsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    android:layout_marginTop="60dp">
+
+    <Button
+        android:id="@+id/reviewListBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/rounded_border_green"
+        android:textColor="@color/black"
+        android:text="리뷰 목록" />
+
+    <Button
+        android:id="@+id/reviewWriteBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_border_green"
+        android:textColor="@color/black"
+        android:text="리뷰 쓰기" />
+</LinearLayout>
+
+<!-- BusinessDays RecyclerView -->
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/businessDaysRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp" />
+</LinearLayout>
