@@ -200,6 +200,7 @@
     8. PR을 닫고 작업 브랜치 삭제
 #### 코드에 관한 documentation
 - 아래 링크 참고
+- Front-End 코드 명세화 : https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/Front_End_code_documentation
 - API 명세서: https://eggplant-taurus-0ef.notion.site/API-159a62ef7a25801db690edd5a137df09?pvs=4
 - Swagger UI: http://3.36.51.32:8080/swagger-ui/index.html#
 > 보안 상의 이유로 .env 파일을 제거한 후 업로드하였기 때문에 업로드된 코드로는 실행이 불가합니다. (실행 시 에러)
