@@ -40,7 +40,7 @@
 #### 관리자 권한
 관리자는 사용자들의 신고 및 정보 수정 제안 목록을 확인할 수 있고, 이를 반영하여 데이터베이스를 관리한다.
 
-#### DEMO VIDEO: <<관련 문서 링크>>
+#### DEMO VIDEO: <<[관련 문서 링크](https://drive.google.com/file/d/1d6sZRZtw3VQhCkAYsHnggzyqNur4V2kq/view?usp=sharing)>>
 
 ## Project Constraints
 ### 기존 예상했던 제약사항
