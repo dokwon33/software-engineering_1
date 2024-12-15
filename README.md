@@ -133,6 +133,13 @@
 7. 설치 완료 -> 앱 아이콘 클릭 해 앱 실행!! <br>
 ![KakaoTalk_Photo_2024-12-14-18-54-54](https://github.com/user-attachments/assets/502dc97a-19d9-4e8d-b04a-da5935cca970) <br>
 
+### 테스트 계정 <br>
+#### User 계정 <br>
+- email: user@uos.ac.kr <br>
+= password: User1234! <br>
+#### Admin 계정 <br>
+- email: admin@uos.ac.kr <br>
+- password: Admin1234! <br>
 
 ## Project Deliverables
 ### - 요구사항 분석 명세서 final version: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/srs-template-v04.doc)>>
