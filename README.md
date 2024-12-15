@@ -145,7 +145,7 @@
 ### - 요구사항 분석 명세서 final version: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/srs-template-v04.doc)>>
 ### - Architecture 및 Design Documents
 * Software architecture & Design: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/High-level%20Architecture%20UML%20Diagrams%20Document_Final.pdf)>>
-* UI Design: <<[관련 문서 링크]https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/UI_Design_Document_v2.0.docx>>
+* UI Design: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/UI_Design_Document_v2.0.docx)>>
 
 ### - Coding Standard: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/Coding_Standard_Final.pdf)>>
 
