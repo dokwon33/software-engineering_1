@@ -118,7 +118,7 @@
 
 ## Installation guideline
 >0. Android 스마트폰 기준 <br>
->1. 링크에서 apk 파일 다운로드 <<[관련 문서 링크](https://drive.google.com/file/d/1d6sZRZtw3VQhCkAYsHnggzyqNur4V2kq/view?usp=sharing)>> <br>
+>1. 링크에서 apk 파일 다운로드 <<[관련 문서 링크](https://drive.google.com/drive/folders/1YI8-aAbpBvYZjQhYVkLLYUYHDjvGegeF)>> <br>
 >2. 출처를 알 수 없는 앱 설치를 위해 "설정" 버튼 클릭 <br>
 >![KakaoTalk_Photo_2024-12-14-18-48-56 001](https://github.com/user-attachments/assets/b8e81956-0490-49ad-8ba5-35aba41745ca) <br>
 >3. 출처를 알 수 없는 앱 설치 -> 권한 허용 <br>
