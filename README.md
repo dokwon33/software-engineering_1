@@ -62,7 +62,6 @@
 #### 보안 및 개인정보 보호
 - 개인정보 보호법을 준수해야 한다. <br>
 - API 키가 외부로 유출되지 않도록 안전하게 관리해야 한다. <br>
-<br>
 
 ### 실제 구현 시 제약사항
 #### AWS EC2 인스턴스의 사양 부족 문제
@@ -271,7 +270,7 @@ src // 프로젝트 소스코드
  ┃ ┣ java
  ┃ ┃ ┗ UOSense
  ┃ ┃ ┃ ┗ UOSense_Backend
- ┃ ┃ ┃ ┃ ┣ common  // 유용성이 
+ ┃ ┃ ┃ ┃ ┣ common  // 범용성이 높은 클래스 모음
  ┃ ┃ ┃ ┃ ┃ ┣ converter  // 엔티티 속성과 DB 테이블 내 컬럼을 서로 변환해주는 컨버터 모음
  ┃ ┃ ┃ ┃ ┃ ┣ enumClass // enum 클래스 모음
  ┃ ┃ ┃ ┃ ┃ ┣ exception // 커스텀 예외 모음
@@ -285,7 +284,7 @@ src // 프로젝트 소스코드
  ┃ ┃ ┃ ┃ ┣ repository // 리파지토리 모음
  ┃ ┃ ┃ ┃ ┣ service // 서비스 모음
  ┃ ┃ ┃ ┃ ┗ UoSenseBackendApplication.java // 어플리케이션
- ┃ ┗ resources  // 
+ ┃ ┗ resources  // 애플리케이션 환경 설정 파일 및 기타 리소스 파일
  ┃ ┃ ┗ application.properties // 환경변수
 ```
 
