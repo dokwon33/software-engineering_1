@@ -225,19 +225,21 @@ src
  ┃ ┃ ┗ com
  ┃ ┃ ┃ ┗ example
  ┃ ┃ ┃ ┃ ┗ uosense
- ┃ ┃ ┃ ┃ ┃ ┣ adapters // RecyclerView 및 ListView와 같은 UI 구성 요소에 데이터 바인딩을 위한 어댑터 클래스 모음
- ┃ ┃ ┃ ┃ ┃ ┣ data // 데이터 모델 및 저장소 관련 클래스 모음
- ┃ ┃ ┃ ┃ ┃ ┣ fragments // 화면 단위 UI 조각 관리 클래스 모음
- ┃ ┃ ┃ ┃ ┃ ┣ models // API 요청 및 응답을 위한 데이터 모델 클래스 모음
- ┃ ┃ ┃ ┃ ┃ ┣ network // Retrofit API 서비스 인터페이스 및 네트워크 관리 클래스
- ┃ ┃ ┃ ┃ ┃ ┣ ui // UI 관리 및 화면 관련 클래스
+ ┃ ┃ ┃ ┃ ┃ ┣ adapters // RecyclerView 및 ListView와 같은 UI 구성 요소에 데이터 바인딩을 위한 어댑터 클래스 디렉토리
+ ┃ ┃ ┃ ┃ ┃ ┣ data // 데이터 모델 및 저장소 관련 클래스 디렉토리
+ ┃ ┃ ┃ ┃ ┃ ┣ fragments // 화면 단위 UI 조각 관리 클래스 디렉토리
+ ┃ ┃ ┃ ┃ ┃ ┣ models // API 요청 및 응답을 위한 데이터 모델 클래스 디렉토리
+ ┃ ┃ ┃ ┃ ┃ ┣ network // Retrofit API 서비스 인터페이스 및 네트워크 관리 디렉토리
+ ┃ ┃ ┃ ┃ ┃ ┣ ui // UI 관리 및 화면 관련 클래스 디렉토리
  ┃ ┃ ┃ ┃ ┃ ┣ AppUtils.kt // 공통적으로 사용하는 앱 유틸리티 함수 모음
  ┃ ┃ ┃ ┃ ┃ ┣ ControlCreateActivity.kt // 관리자 식당 생성 액티비티
  ┃ ┃ ┃ ┃ ┃ ┣ ControlMainActivity.kt // 관리자 메인 화면 액티비티
  ┃ ┃ ┃ ┃ ┃ ┣ ControlRestaurantDetail.kt // 관리자 식당 상세 정보(수정) 액티비티
  ┃ ┃ ┃ ┃ ┃ ┣ ControlRestaurantListActivity.kt // 관리자 식당 목록 확인 및 관리 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ FavoriteListActivity.kt // 자신의 즐겨찾기 확인 액티비티 
  ┃ ┃ ┃ ┃ ┃ ┣ MainActivity.kt // 사용자 메인 액티비티
  ┃ ┃ ┃ ┃ ┃ ┣ MyPageActivity.kt // 마이페이지 (자신의 프로필 정보 확인 및 설정) 액티비티
+ ┃ ┃ ┃ ┃ ┃ ┣ MyReviewActivity.kt // 자신의 리뷰 확인 액티비티
  ┃ ┃ ┃ ┃ ┃ ┣ ReportActivity.kt // 리뷰 신고 액티비티
  ┃ ┃ ┃ ┃ ┃ ┣ RestaurantDetailActivity.kt // 사용자 식당 상세 정보 액티비티
  ┃ ┃ ┃ ┃ ┃ ┣ RestaurantInfoSuggestionActivity.kt // 정보 제안 액티비티
