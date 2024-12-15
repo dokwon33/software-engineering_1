@@ -1,0 +1,347 @@
+Front-End 코드 명세화
+
+1. StartActivity
+/**
+ * 로그인을 하는 액티비티입니다.
+ * 로그인 후 사용자, 관리자 역할 파악 및 회원가입 액티비티로의 이동 기능을 제공합니다.
+ */
+
+1-1	로그인 버튼 이벤트 처리
+/** 
+* 로그인 버튼을 누르면 실행되는 메소드입니다.
+* 로그인 시 이메일과 비밀번호 입력 여부를 판단하여 로그인 처리 메소드 호출 기능을 제공합니다.
+*/
+    binding.loginBtn.setOnClickListener {
+        val email = binding.emailInput.text.toString().trim()
+        val password = binding.passwordInput.text.toString().trim()
+
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            loginUser(email, password)
+        } else {
+            Toast.makeText(this, "이메일과 비밀번호를 입력하세요.", Toast.LENGTH_SHORT).show()
+        }
+    }
+1-2	로그인 처리
+/**
+* 로그인 버튼 이벤트 처리 부분에서 호출되면 API 통신을 통해 accessToken과 refreshToken을 받아오는 메소드입니다.
+* 토큰 저장 및 파싱을 통해 로그인한 사용자의 역할(ADMIN, USER)을 구분하여 각각 다른 액티비티로의 이동 기능을 제공합니다.
+*/
+  private fun loginUser(email: String, password: String) {
+      val loginRequest = LoginRequest(email, password)
+  
+      CoroutineScope(Dispatchers.IO).launch {
+          try {
+              val response = RetrofitInstance.restaurantApi.loginUser(loginRequest)
+  
+              withContext(Dispatchers.Main) {
+                  if (response.isSuccessful) {
+                      val accessToken =
+                          response.headers()["access"]?.removePrefix("Bearer ") ?: ""
+                      val refreshToken = response.headers()["Set-Cookie"]?.split(";")
+                          ?.find { it.startsWith("refresh=") }
+                          ?.substringAfter("refresh=") ?: ""
+  
+                      if (accessToken.isNotEmpty() && refreshToken.isNotEmpty()) {
+                          /** 토큰 저장 및 role 파싱 */
+                          saveTokensToLocal(accessToken, refreshToken)
+                          parseRoleFromToken(refreshToken)
+  
+                          if (userRole == "USER") {
+                              Toast.makeText(
+                                  this@StartActivity,
+                                  "로그인 성공!" ,
+                                  Toast.LENGTH_SHORT
+                              ).show()
+                              navigateToMainActivity()
+                          } else if (userRole == "ADMIN") {
+                              Toast.makeText(
+                                  this@StartActivity,
+                                  "로그인 성공! 관리자 역할: ADMIN",
+                                  Toast.LENGTH_SHORT
+                              ).show()
+                              navigateToControlMainActivity()
+                          } else {
+                              Toast.makeText(
+                                  this@StartActivity,
+                                  "알 수 없는 사용자 역할: $userRole",
+                                  Toast.LENGTH_SHORT
+                              ).show()
+                          }
+                      } else {
+                          Toast.makeText(this@StartActivity, "토큰 발급 실패", Toast.LENGTH_SHORT)
+                              .show()
+                      }
+                  } else {
+                      Toast.makeText(
+                          this@StartActivity,
+                          "로그인 실패",
+                          Toast.LENGTH_SHORT
+                      ).show()
+                  }
+              }
+          } catch (e: Exception) {
+              withContext(Dispatchers.Main) {
+                  Toast.makeText(this@StartActivity, "네트워크 오류", Toast.LENGTH_SHORT)
+                      .show()
+              }
+          }
+      }
+  }
+
+2. MainActivity
+/**
+ * 메인 액티비티 - 네이버 지도를 사용해 식당 정보를 보여주는 메인 화면입니다.
+ * 지도 초기화, 사용자 위치 추적, 식당 목록 표시 등의 기능을 수행합니다.
+ */
+
+2-1 초기화 작업
+/**
+ * 초기화 시 호출되는 메서드입니다.
+ * 지도 설정, 위치 권한 요청 및 사용자 위치 추적 등을 초기화합니다.
+ */
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // TokenManager 초기화
+        tokenManager = TokenManager(this)
+
+        // 뷰 바인딩 초기화
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // 네이버 지도 초기화
+        NaverMapSdk.getInstance(this).client = NaverMapSdk.NaverCloudPlatformClient("s78aa7asq0")
+
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as MapFragment?
+            ?: MapFragment.newInstance().also {
+                supportFragmentManager.beginTransaction().add(R.id.map, it).commit()
+            }
+
+        locationSource = FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE)
+
+        mapFragment.getMapAsync(this)
+
+        // 리프레시 토큰 검증
+        val refreshToken = tokenManager.getRefreshToken()
+        if (refreshToken.isNullOrEmpty()) {
+            Toast.makeText(this, "로그인이 필요합니다.", Toast.LENGTH_SHORT).show()
+            navigateToLoginActivity() // 로그인 화면으로 이동
+            return
+        }
+2-2 식당 목록 불러오기
+/**
+ * 전체 식당 목록을 로딩합니다.
+ * API를 호출해 결과가 있으면 목록 화면으로 이동합니다.
+ */
+    private fun loadAllRestaurants() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                // 액세스 토큰 유효성 확인 및 새로 고침
+                val accessToken = tokenManager.ensureValidAccessToken()
+
+                if (accessToken.isNullOrEmpty()) {
+                    // 로그인 화면으로 이동
+                    Toast.makeText(this@MainActivity, "로그인이 필요합니다.", Toast.LENGTH_SHORT).show()
+                    return@launch
+                }
+                val response = restaurantApi.getRestaurantList(
+                    filter = "DEFAULT"
+                )
+                withContext(Dispatchers.Main) {
+                    response.body()?.let {
+                        if (it.isNotEmpty()) {
+                            navigateToRestaurantList(it)
+                        } else {
+                            showToast(this@MainActivity, "식당 정보가 없습니다.", Toast.LENGTH_SHORT)
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    showToast(this@MainActivity, "API 호출 오류 발생", Toast.LENGTH_SHORT)
+                }
+                e.printStackTrace()
+            }
+        }
+    }
+2-3 식당 세부 정보 불러오기
+/**
+ * 특정 식당 ID를 사용해 API 호출을 통해 식당 세부 정보를 가져옵니다.
+ * @param restaurantId 조회할 식당의 고유 ID
+ */
+    private fun fetchRestaurantDetails(restaurantId: Int) {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                // 액세스 토큰 유효성 확인 및 새로 고침
+                val accessToken = tokenManager.ensureValidAccessToken()
+
+                if (accessToken.isNullOrEmpty()) {
+                    // 로그인 화면으로 이동
+                    Toast.makeText(this@MainActivity, "로그인이 필요합니다.", Toast.LENGTH_SHORT).show()
+                    return@launch
+                }
+                val response = RetrofitInstance.restaurantApi.getRestaurantById(restaurantId)
+                withContext(Dispatchers.Main) {
+                    if (response.isSuccessful && response.body() != null) {
+                        navigateToRestaurantDetail(response.body()!!)
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                withContext(Dispatchers.Main) {
+                }
+            }
+        }
+    }
+
+3. RestaurantDetailActivity
+/**
+ * 식당 세부 정보를 표시하는 액티비티입니다.
+ * 식당 정보, 영업일, 메뉴, 리뷰 목록 및 즐겨찾기 기능을 제공합니다.
+ */
+
+3-1 영업일 조회
+/**
+ * 영업일 정보를 불러옵니다.
+ */
+    private fun loadBusinessDays() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                /** 액세스 토큰 유효성 확인 및 새로 고침 */
+                val accessToken = tokenManager.ensureValidAccessToken()
+
+                if (accessToken.isNullOrEmpty()) {
+                    /** 로그인 화면으로 이동 */
+                    Toast.makeText(this@RestaurantDetailActivity, "로그인이 필요합니다.", Toast.LENGTH_SHORT).show()
+                    return@launch
+                }
+                val response = RetrofitInstance.restaurantApi.getBusinessDayList(restaurantId)
+                withContext(Dispatchers.Main) {
+                    if (response.isSuccessful && response.body() != null) {
+                        businessDayAdapter.submitList(response.body()!!.businessDayInfoList)
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+3-2 즐겨찾기 버튼 이벤트 리스너
+/**
+ * 즐겨찾기 상태를 토글합니다.
+ * 즐겨찾기 버튼을 누르면 해당 정보를 서버 DB에 저장합니다.
+ */
+    private fun toggleFavorite() {
+        isFavorite = !isFavorite
+        val message = if (isFavorite) "즐겨찾기에 추가됨" else "즐겨찾기에서 제거됨"
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        updateFavoriteIcon()
+    }
+
+/**
+ * 즐겨찾기 아이콘을 업데이트합니다.
+ */
+    private fun updateFavoriteIcon() {
+        favoriteButton.setImageResource(
+            if (isFavorite) R.drawable.heart_color else R.drawable.blackheart
+        )
+    }
+3-3 리뷰 목록 및 쓰기 버튼 제공
+/**
+ * 리뷰 옵션(목록, 쓰기)를 보여줍니다.
+ * 리뷰 목록 버튼 클릭 시 리뷰 목록 액티비티로, 리뷰 쓰기 버튼 클릭 시 리뷰 쓰기 액티비티로의 전환 기능을 제공합니다.
+ */
+    private fun showReviewOptions() {
+        reviewOptionsLayout.visibility = View.VISIBLE
+        recyclerView.visibility = View.GONE
+    }
+
+4. ReviewWriteActivity
+/**
+ * 사용자가 리뷰를 작성하는 액티비티입니다.
+ * 리뷰 작성 기능을 제공합니다.
+ */
+
+4-1 식당 정보 불러오기
+/** 
+* 식당 정보를 API로부터 불러옵니다. 
+*/
+    private fun loadRestaurantData() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                /** 액세스 토큰 유효성 확인 및 새로 고침 */
+                val accessToken = tokenManager.ensureValidAccessToken()
+
+                if (accessToken.isNullOrEmpty()) {
+                    Toast.makeText(this@ReviewWriteActivity, "로그인이 필요합니다.", Toast.LENGTH_SHORT)
+                        .show()
+                    return@launch
+                }
+                val response = RetrofitInstance.restaurantApi.getRestaurantById(restaurantId)
+                withContext(Dispatchers.Main) {
+                    if (response.isSuccessful && response.body() != null) {
+                        bindRestaurantData(response.body()!!)
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+4-2 리뷰 이미지 등록
+/**    
+* 리뷰 이미지 업로드 함수입니다.
+* 토큰 여부를 파악하고, 이미지 업로드 성공 여부를 사용자에게 보여줍니다.
+*/
+    private fun uploadReviewImages(reviewId: Int) {
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                /** 선택된 이미지 URI를 MultipartBody.Part로 변환 */
+                val imageParts = selectedImageUris.map { uri ->
+                    prepareFilePart("images", uri)
+                }
+
+                /** 로그: 변환된 이미지 데이터와 리뷰 ID 확인 */
+                Log.d("ImageUpload", "Review ID: $reviewId")
+                imageParts.forEachIndexed { index, part ->
+                    Log.d(
+                        "ImageUpload",
+                        "Image Part [$index]: ${part.body.contentType()} - ${part.headers}"
+                    )
+                }
+
+                /** API 호출 전 */
+                Log.d(
+                    "ImageUpload",
+                    "Requesting upload for Review ID: $reviewId with ${imageParts.size} parts"
+                )
+
+                /** API 호출 */
+                val response =
+                    RetrofitInstance.restaurantApi.uploadReviewImages(reviewId, imageParts)
+                if (response.isSuccessful) {
+                    Log.d(
+                        "ImageUpload",
+                        "Image upload successful. Response code: ${response.code()}"
+                    )
+                    Toast.makeText(this@ReviewWriteActivity, "이미지 업로드 성공!", Toast.LENGTH_SHORT)
+                        .show()
+                    finish()
+
+                } else {
+                    Log.e(
+                        "ImageUpload",
+                        "이미지 업로드 실패: ${response.code()} - ${response.errorBody()?.string()}"
+                    )
+                    Toast.makeText(this@ReviewWriteActivity, "이미지 업로드 실패", Toast.LENGTH_SHORT)
+                        .show()
+                    finish()
+                }
+            } catch (e: Exception) {
+                Log.e("ImageUpload", "오류 발생: ${e.message}")
+                Toast.makeText(this@ReviewWriteActivity, "이미지 업로드 중 오류 발생", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+    }
+4. 
