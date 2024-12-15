@@ -38,8 +38,7 @@
 사용자는 자신의 이름, 사진 등의 프로필 정보를 수정할 수 있다. 
 
 #### 정보 수정 제안
-사용자는 특정 식당이나 새로운 식당의 정보에 대해 수정을 제안할 수 있다. <br>
-<br>
+사용자는 특정 식당이나 새로운 식당의 정보에 대해 수정을 제안할 수 있다.
 
 #### 관리자 권한
 관리자는 사용자들의 신고 및 정보 수정 제안 목록을 확인할 수 있고, 이를 반영하여 데이터베이스를 관리한다.
@@ -196,8 +195,10 @@
     7. 리뷰 과정을 거친 후 작업 브랜치를 base 브랜치에 merge
     8. PR을 닫고 작업 브랜치 삭제
 #### 코드에 관한 documentation
+- 아래 링크 참고
 - API 명세서: https://eggplant-taurus-0ef.notion.site/API-159a62ef7a25801db690edd5a137df09?pvs=4
 - Swagger UI: http://3.36.51.32:8080/swagger-ui/index.html#
+> 보안 상의 이유로 .env 파일을 제거한 후 업로드하였기 때문에 업로드된 코드로는 실행이 불가합니다. (실행 시 에러)
 
 ### - 테스트 케이스 및 결과 final version: <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/test_case_template.ver%203.0.xlsx)>>
 ### - Scrum 관련 자료 <<[관련 문서 링크](https://github.com/dokwon33/software-engineering_1/blob/main/artifacts/Scrum%20%EA%B4%80%EB%A0%A8%20%EB%AC%B8%EC%84%9C.docx)>>
